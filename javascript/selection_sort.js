@@ -1,5 +1,20 @@
 function selectionSort(arr) {
-  // type your code here
+  let sorted = []
+
+  while (arr.length > 0) {
+    const minVal = Math.min(...arr)
+    remove(arr, minVal)
+    sorted.push(minVal)
+  }
+
+  return sorted
+}
+
+function remove(array, item) {
+  let index = array.indexOf(item)
+  if (index !== -1) {
+    array.splice(index, 1)
+  }
 }
 
 if (require.main === module) {
